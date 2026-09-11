@@ -264,7 +264,7 @@ gsap.registerPlugin(ScrollTrigger);
                         <p style={{ 
                             fontSize: '14px', 
                             marginBottom: '40px', 
-                            fontFamily: 'RobotoThin' }}>+91 94971 94971</p>
+                            fontFamily: 'RobotoThin' }}>+91 94971 94971 · +91 89197 21762</p>
 
                         <hr style={{ 
                             borderColor: '#222', 

@@ -163,7 +163,7 @@ The shop never invents prices for checkout — it reads the API, then orders val
 ### Login
 
 - URL: `/login`  
-- Demo: `admin@devert.store` / `devert123` (change in production env)  
+- Staff-only accounts (credentials are **not** shown on the login page — shared privately with the team).  
 - Auth: NextAuth Credentials + bcrypt password hash in DB  
 
 ### Admin sections

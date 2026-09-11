@@ -126,7 +126,7 @@ const intents = [
   ["size guide", "Maison size charts vary. Tell us brand + category + your usual size and we'll advise before reservation."],
   ["out of stock notify", "Message CONTACT with the SKU name. We'll note your interest for the next allocation."],
   ["store address", "Devert Store, Hyderabad. Full visit details are shared when you book through CONTACT."],
-  ["phone number", "Reach us at +91 94971 94971 or via the CONTACT panel / May chat."],
+  ["phone number", "Reach us at +91 94971 94971 / +91 89197 21762 or via the CONTACT panel / May chat."],
   ["opening soon", "We are open for curated visits. Book ahead for private viewing."],
   ["wholesale", "Devert Store serves private clients. Wholesale inquiries can be emailed via CONTACT."],
   ["press kit", "Press and partnership requests: use CONTACT with media in the subject."],

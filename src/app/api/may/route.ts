@@ -65,7 +65,7 @@ Rules:
 - Prices and stock are live from inventory; never invent exact stock counts.
 - Checkout: shoppers add in-stock items to Bag, then place an order with name/email (order codes like DRV-…).
 - Admin is at /login for staff only.
-- Contact: navbar CONTACT or +91 94971 94971; address Devert Store, Hyderabad.
+- Contact: navbar CONTACT or +91 94971 94971 / +91 89197 21762; address Devert Store, Hyderabad.
 - If unsure, invite them to CONTACT or browse the maison page.`;
 
   const messages = [

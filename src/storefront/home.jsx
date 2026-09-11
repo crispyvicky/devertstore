@@ -273,7 +273,7 @@ const HomeApp = () => {
 
                 <footer className="lp-footer">
                     <h2>Where heritage meets the future of style.</h2>
-                    <p>Devert Store, Hyderabad Â· +91 94971 94971</p>
+                    <p>Devert Store, Hyderabad Â· +91 94971 94971 · +91 89197 21762</p>
                 </footer>
 
                 <div ref={contactPanelRef} style={{
@@ -311,7 +311,7 @@ const HomeApp = () => {
                         <p style={{ color: '#666', fontSize: '11px', marginBottom: '5px' }}>ADDRESS</p>
                         <p style={{ fontSize: '14px', marginBottom: '25px' }}>Devert Store, Hyderabad</p>
                         <p style={{ color: '#666', fontSize: '11px', marginBottom: '5px' }}>PHONE</p>
-                        <p style={{ fontSize: '14px', marginBottom: '40px' }}>+91 94971 94971</p>
+                        <p style={{ fontSize: '14px', marginBottom: '40px' }}>+91 94971 94971 · +91 89197 21762</p>
                         <hr style={{ borderColor: '#222', borderTop: 'none' }} />
                     </div>
 

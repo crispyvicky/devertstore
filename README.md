@@ -49,7 +49,7 @@ npm run dev
 | `/api/products` | Live catalog |
 | `/api/orders` | Storefront checkout (deducts stock) |
 
-Default admin after seed: `admin@devert.store` / password from `ADMIN_PASSWORD`.
+Default admin after seed: set via `ADMIN_*` env or run `npx tsx scripts/seed-admins.ts` for staff accounts (never published on `/login`).
 
 ## Deploy on Vercel (one project)
 

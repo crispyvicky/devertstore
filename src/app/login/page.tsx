@@ -91,7 +91,8 @@ export default async function LoginPage({
                 name="email"
                 type="email"
                 required
-                defaultValue="admin@devert.store"
+                autoComplete="username"
+                placeholder="staff@devert.store"
                 className="w-full border-0 border-b border-[#333] bg-transparent px-0 py-3 outline-none transition focus:border-[#c6a572]"
               />
             </label>
@@ -103,7 +104,8 @@ export default async function LoginPage({
                 name="password"
                 type="password"
                 required
-                defaultValue="devert123"
+                autoComplete="current-password"
+                placeholder="••••••••"
                 className="w-full border-0 border-b border-[#333] bg-transparent px-0 py-3 outline-none transition focus:border-[#c6a572]"
               />
             </label>
@@ -116,7 +118,7 @@ export default async function LoginPage({
           </form>
 
           <p className="mt-6 text-xs leading-relaxed text-[#6f6a62]">
-            Demo: admin@devert.store / devert123
+            Staff access only. Credentials are not published on this page.
           </p>
         </section>
       </div>
