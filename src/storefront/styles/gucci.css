@@ -1,0 +1,270 @@
+
+
+.nav-menu {
+  display: flex;
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  width: 100%; 
+  justify-content: space-around; 
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; 
+  background-color: #000;
+  border-bottom: 1px solid #333;
+  z-index: 9999;
+  
+  display: flex;         
+  justify-content: space-between; 
+  align-items: center;   
+  padding: 50px 80px;      
+  box-sizing: border-box; 
+
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;        
+  margin: 0;
+  padding: 0;
+  width: auto;        
+}
+
+ /* TEST */
+
+.nav-list li {
+  flex: 0 1 auto; 
+}
+
+.nav-links {
+  display: block;
+  padding: 30px 40px; 
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: 'RobotoMedium'; 
+}
+
+li {
+  text-decoration: none; 
+  color: white;
+  font-family: 'RobotoMedium';
+  list-style: none;
+}
+
+ul {
+  color: white;
+  font-size: 25px; 
+  text-decoration: none;
+  
+}
+
+.nav-menu > li > a {
+  display: block;
+  padding: 20px 25px;
+  color: #fff; 
+  text-decoration: none; 
+  font-family: "RobotoMedium";
+  text-transform: uppercase;
+  font-size: 24px;
+  
+  transition: all 0.3s ease;
+}
+
+.nav-menu > li > a:hover {
+  background-color: #fff; 
+  color: #000;          
+  
+}
+
+.has-dropdown {
+  position: relative; 
+}
+
+.dropdown {
+  display: none;        
+  position: absolute;
+  top: 100%;           
+  left: 0;
+  background-color: #222; 
+  list-style: none;     
+  padding: 10px 0;
+  min-width: 220px;
+}
+
+.dropdown li a {
+  color: #fff;      
+  padding: 12px 25px;
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  
+}
+
+.dropdown li a:hover {
+  background-color: #444; 
+  color: #fff;
+}
+
+.has-dropdown:hover .dropdown {
+  display: block; 
+}
+
+
+
+.nav-menu > li > a:hover {
+  background-color: #000;
+  color: #fff;        
+}
+
+
+.dropdown li a:hover {
+  background-color: #333; 
+}
+
+
+.nav-menu > li > a:hover {
+  background-color: #000;
+  color: #fff;        
+}
+
+.dropdown li a:hover {
+  background-color: #333; 
+}
+
+
+
+
+
+
+
+/* NAV BAR EDNS */
+
+/******************************/
+
+body {
+    font-family: "RobotoMedium", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; 
+}
+
+.mask {
+    will-change: clip-path; /* This is the "Turbo" button for iPad animations */
+       
+    /* csslint ignore:start */
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);/* Initial state */
+   /* csslint ignore:end */
+
+}
+
+.img-container {
+    background-color: #000; /* Ensures no white/dots show through */
+}
+
+
+.mask {
+    opacity: 0; /* Total blackout until GSAP wakes up */
+    /* Critical for Mac: Forces the GPU to hold the "hidden" state strictly */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* 1. Desktop: Show on Hover */
+.has-dropdown:hover .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 2. Mobile/iPad: Show when the link is Tapped (Focused) */
+.has-dropdown:focus-within .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ensure the link itself can be focused */
+.nav-links:focus {
+    outline: none;
+}
+
+
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none; /* Crucial: lets you click through to the bags/nav */
+  opacity: 0.04; /* Very subtle - keep it between 0.03 and 0.06 */
+  
+  /* SVG Noise Pattern */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  
+  /* The "Film Jitter" Animation */
+  animation: grain-dance 0.2s steps(2) infinite;
+}
+
+@keyframes grain-dance {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-0.5%, -0.5%); }
+  50% { transform: translate(0.5%, 0.5%); }
+  75% { transform: translate(-0.5%, 0.5%); }
+}
+
+/* Testing mobile compatibility * /
+/ *This centers the entire project block on all screens */
+.row-wrapper {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* This makes sure the inner content doesn't "leak" off the phone screen */
+.row-wrapper > div {
+  width: 90% !important; /* Forces breathing room on left/right */
+  max-width: 1100px;
+  margin: 0 auto !important; /* Centers the content box */
+}
+
+/* MOBILE FIXES (Only triggers on screens smaller than 768px) */
+@media (max-width: 768px) {
+  
+nav ul, .navbar-container {
+  display: flex; /* ensures flexbox is active */
+  flex-direction: row !important; /* stacks links horizontally */
+  flex-wrap: wrap !important; /* allows links to jump to a new line if space runs out */
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 0px !important;
+}
+
+nav ul li a, .nav-links {
+  font-size: 11px !important;
+  letter-spacing: 1px !important;
+  padding: 0px !important;
+  list-style: none !important;
+}
+
+
+  /* 2. Scale down the general content further */
+  .side-list-container h3 {
+    font-size: 16px !important; /* Smaller title for mobile */
+  }
+
+
+  .items-col p, 
+  .prices-col p, 
+  .price-tag {
+    font-size: 13px !important; /* Matches both sides */
+    line-height: 1.4 !important;
+    margin: 8px 0 !important; /* Tighter vertical spacing for mobile */
+  }
+}
