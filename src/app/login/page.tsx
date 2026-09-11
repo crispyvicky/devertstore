@@ -2,11 +2,21 @@ import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 import { signIn, auth } from "@/auth";
 
+/** Only allow same-site relative paths — never localhost or absolute URLs. */
+function safeCallbackUrl(raw: string) {
+  const value = String(raw || "/admin").trim();
+  if (!value.startsWith("/") || value.startsWith("//")) return "/admin";
+  if (value.includes("://") || value.toLowerCase().includes("localhost")) {
+    return "/admin";
+  }
+  return value;
+}
+
 async function loginAction(formData: FormData) {
   "use server";
   const email = String(formData.get("email") || "");
   const password = String(formData.get("password") || "");
-  const callbackUrl = String(formData.get("callbackUrl") || "/admin");
+  const callbackUrl = safeCallbackUrl(String(formData.get("callbackUrl") || "/admin"));
 
   try {
     await signIn("credentials", {
@@ -32,7 +42,7 @@ export default async function LoginPage({
 
   const params = await searchParams;
   const error = params.error;
-  const callbackUrl = params.callbackUrl || "/admin";
+  const callbackUrl = safeCallbackUrl(params.callbackUrl || "/admin");
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#050505] text-[#f4f1ea]">
