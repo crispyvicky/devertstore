@@ -13,12 +13,22 @@ const prisma = new PrismaClient();
 // Instead import by running the compiled data: read seed.ts products JSON-like block.
 // Simpler: dynamic import of seed products by spawning tsx eval — use createMany from seed file products.
 
-async function loadProducts() {
+type SeedProduct = {
+  name: string;
+  brand: string;
+  sku: string;
+  price: number;
+  stock: number;
+  category: string;
+  lowStockAt?: number;
+};
+
+async function loadProducts(): Promise<SeedProduct[]> {
   const seedPath = join(dirname(fileURLToPath(import.meta.url)), "..", "prisma", "seed.ts");
   const text = readFileSync(seedPath, "utf8");
   const match = text.match(/const products = (\[[\s\S]*?\]) as const;/);
   if (!match) throw new Error("Could not parse products from seed.ts");
-  return JSON.parse(match[1]);
+  return JSON.parse(match[1]) as SeedProduct[];
 }
 
 async function main() {
